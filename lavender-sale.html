@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lavender Soap Sale — FERA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: linear-gradient(120deg, #eaf6ff 0%, #fffbe8 100%);
+        min-height: 100vh;
+        position: relative;
+      }
+      .festive-banner {
+        width: 100%;
+        background: linear-gradient(90deg, #d7263d 0%, #ffb400 100%);
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 12px 0 10px 0;
+        letter-spacing: 2px;
+        box-shadow: 0 2px 12px rgba(215,38,61,0.10);
+        position: relative;
+        z-index: 2;
+      }
+      .sale-hero {
+        max-width: 700px;
+        margin: 40px auto 24px auto;
+        background: #fffbe8;
+        border-radius: 18px;
+        box-shadow: 0 10px 32px rgba(180,140,40,0.10);
+        padding: 32px 28px 38px 28px;
+        text-align: center;
+        position: relative;
+        overflow: visible;
+      }
+      .sale-hero img {
+        width: 220px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        box-shadow: 0 4px 18px rgba(180,140,40,0.10);
+        border: 4px solid #d7263d;
+      }
+      .sale-price {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #b48c28;
+        margin-bottom: 8px;
+        background: #fff3e0;
+        border-radius: 8px;
+        padding: 4px 16px;
+        display: inline-block;
+        box-shadow: 0 2px 8px rgba(215,38,61,0.08);
+      }
+      .old-price {
+        text-decoration: line-through;
+        color: #888;
+        font-size: 1.1rem;
+        margin-left: 8px;
+      }
+      .timer {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #d7263d;
+        margin: 18px 0 10px 0;
+        letter-spacing: 1px;
+        background: #fff3e0;
+        border-radius: 8px;
+        padding: 4px 12px;
+        display: inline-block;
+      }
+      .btn-sale {
+        background: #d7263d;
+        color: #fff;
+        font-weight: 800;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 32px;
+        margin-top: 18px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(215,38,61,0.10);
+        transition: background 180ms;
+      }
+      .btn-sale:hover {
+        background: #ffb400;
+        color: #d7263d;
+      }
+      .festive-decor {
+        position: absolute;
+        left: 0; right: 0; top: -38px;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        z-index: 3;
+        pointer-events: none;
+      }
+      .festive-decor svg {
+        width: 48px; height: 48px;
+        filter: drop-shadow(0 2px 6px rgba(215,38,61,0.10));
+      }
+      .festive-snow {
+        pointer-events: none;
+        position: fixed;
+        left: 0; top: 0; width: 100vw; height: 100vh;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="festive-banner">🎄 Merry Christmas! Enjoy our holiday sale! 🎁</div>
+      <canvas class="festive-snow"></canvas>
+    <header>
+      <img src="/Images/Fera_symbol.jpg" alt="Logo" style="margin-left: 1px; width: 149px; height: auto;" />
+    </header>
+
+    <div class="sale-hero">
+            <div class="festive-decor">
+              <!-- Christmas tree SVG -->
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 6l-7 10h5l-8 10h6l-9 10h34l-9-10h6l-8-10h5l-7-10z" fill="#2e7d32" stroke="#145a23" stroke-width="2"/><circle cx="24" cy="6" r="2" fill="#ffb400"/><circle cx="17" cy="16" r="1.5" fill="#d7263d"/><circle cx="31" cy="16" r="1.5" fill="#d7263d"/><circle cx="16" cy="26" r="1.5" fill="#ffb400"/><circle cx="32" cy="26" r="1.5" fill="#ffb400"/></svg>
+              <!-- Ornament SVG -->
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="28" r="10" fill="#d7263d" stroke="#b71c1c" stroke-width="2"/><rect x="21" y="16" width="6" height="6" rx="2" fill="#ffb400" stroke="#b48c28" stroke-width="1.5"/></svg>
+              <!-- Candy cane SVG -->
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 8c-7 0-12 5-12 12 0 7 5 12 12 12s12-5 12-12c0-7-5-12-12-12z" stroke="#d7263d" stroke-width="4" fill="none"/><path d="M24 8v24" stroke="#fff" stroke-width="4"/><path d="M24 8c-7 0-12 5-12 12 0 7 5 12 12 12s12-5 12-12c0-7-5-12-12-12z" stroke="#d7263d" stroke-width="4" fill="none"/></svg>
+            </div>
+      <img src="/Images/Lavender_bar.png" alt="Lavender Soap" />
+      <h1>Lavender Soap — Winter Sale!</h1>
+        <p style="font-size:1.2rem;color:#d7263d;font-weight:600;margin-bottom:0;">Special Christmas Offer!</p>
+      <div class="sale-price">$8.99 <span class="old-price">$12.99</span></div>
+      <div class="timer" id="countdown-timer">Sale ends in: --:--:--</div>
+      <p>Our best-selling cold-pressed lavender soap is on sale until January 1st. Treat yourself or gift someone the calming power of lavender!</p>
+      <a href="Shop.html" class="btn-sale">Shop Now</a>
+          <div style="margin-top: 18px; display: flex; justify-content: center; gap: 18px;">
+            <a href="Index.html" class="btn-sale" style="background:#eee;color:#a05c1a;box-shadow:none;">No thanks</a>
+            <a href="lavender-page.html?sale=8.99" class="btn-sale">Purchase</a>
+          </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left"><p>© 2025 FERA — Nature's Design</p></div>
+        <div class="footer-right">
+          <span class="follow">Follow us</span>
+          <a class="social" href="https://www.instagram.com/feraforged/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5h.01" stroke="#2b2b2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3V2z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016.5 3c-2.5 0-4.5 2.28-3.97 4.73A12.94 12.94 0 013 4s-4 9 5 13a13 13 0 01-8 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+            // Simple snow animation
+            (function snow() {
+              const canvas = document.querySelector('.festive-snow');
+              if (!canvas) return;
+              const ctx = canvas.getContext('2d');
+              let w = window.innerWidth, h = window.innerHeight;
+              canvas.width = w; canvas.height = h;
+              let flakes = Array.from({length: 60}, () => ({
+                x: Math.random()*w, y: Math.random()*h, r: 1+Math.random()*2.5, d: 1+Math.random()*1.5, a: Math.random()*Math.PI*2
+              }));
+              function draw() {
+                ctx.clearRect(0,0,w,h);
+                ctx.fillStyle = 'rgba(255,255,255,0.85)';
+                flakes.forEach(f => {
+                  ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2); ctx.fill();
+                });
+              }
+              function update() {
+                flakes.forEach(f => {
+                  f.y += f.d; f.x += Math.sin(f.a)*0.7;
+                  f.a += 0.01;
+                  if(f.y > h) { f.y = -5; f.x = Math.random()*w; }
+                  if(f.x > w) f.x = 0;
+                  if(f.x < 0) f.x = w;
+                });
+              }
+              function loop() { draw(); update(); requestAnimationFrame(loop); }
+              window.addEventListener('resize',()=>{w=window.innerWidth;h=window.innerHeight;canvas.width=w;canvas.height=h;});
+              loop();
+            })();
+      // Countdown timer to January 1st
+      (function(){
+        const timerEl = document.getElementById('countdown-timer');
+        function updateTimer(){
+          const now = new Date();
+          const end = new Date(now.getFullYear()+((now.getMonth()===11&&now.getDate()>1)?1:0),0,1,0,0,0); // Jan 1st, midnight
+          const diff = end-now;
+          if(diff<=0){ timerEl.textContent = 'Sale ended!'; return; }
+          const d = Math.floor(diff/86400000);
+          const h = Math.floor((diff%86400000)/3600000);
+          const m = Math.floor((diff%3600000)/60000);
+          const s = Math.floor((diff%60000)/1000);
+          timerEl.textContent = `Sale ends in: ${d}d ${h}h ${m}m ${s}s`;
+        }
+        updateTimer();
+        setInterval(updateTimer, 1000);
+      })();
+    </script>
+  </body>
+</html>

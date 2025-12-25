@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact Us — FERA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <header>
+        <img src="/Images/Fera_symbol.jpg" alt="Logo" style="margin-left: 1px; width: 149px; height: auto;" />
+      </header>
+      <style>
+      header img {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      margin-top: 10px;
+      margin-left: 10px;
+    } </style>
+    </header>
+
+    <div class="container">
+      <nav>
+        <a href="Index.html">Home</a>
+        <a href="Our Philosophy.html">Our Philosophy</a>
+        <a href="Shop.html">Shop Soap Products</a>
+        <a href="about us.html"> About Us</a>
+        <a href="contact us.html"> Contact Us</a>
+      </nav>
+
+      <main class="content">
+        <h1>Contact Us</h1>
+        <p>If you have questions, wholesale inquiries, or want to say hello, send us a message below.</p>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="10"required placeholder="Write your message here..."></textarea>
+
+          <div style="display:flex;gap:10px;align-items:center;margin-top:10px;">
+            <button type="submit" class="btn">Send message</button>
+            <div id="form-status" aria-live="polite" style="color:green;display:none;"></div>
+          </div>
+        </form>
+
+        <section style="margin-top:18px;color:#444;font-size:0.95rem;">
+          <p>Or email us directly: <a href="mailto:ash@feraforged.com">ash@feraforged.com</a></p>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left"><p>© 2025 FERA — Nature's Design</p></div>
+        <div class="footer-right">
+          <span class="follow">Follow us</span>
+          <a class="social" href="https://www.instagram.com/feraforged/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5h.01" stroke="#2b2b2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3V2z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016.5 3c-2.5 0-4.5 2.28-3.97 4.73A12.94 12.94 0 013 4s-4 9 5 13a13 13 0 01-8 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Client-side contact form handler: validates and stores messages in localStorage
+      (function(){
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        function show(msg){ status.textContent = msg; status.style.display = 'block'; }
+        function clearStatus(){ status.textContent=''; status.style.display='none'; }
+
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          clearStatus();
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
+
+          if(!name || !email || !message){
+            show('Please complete all fields.');
+            status.style.color = 'crimson';
+            return;
+          }
+
+          // basic email validation
+          const emailOK = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+          if(!emailOK){ show('Please enter a valid email address.'); status.style.color='crimson'; return; }
+
+          const now = new Date().toISOString();
+          const entry = { name, email, message, received: now };
+
+          try{
+            const key = 'fera_messages';
+            const existing = JSON.parse(localStorage.getItem(key) || '[]');
+            existing.push(entry);
+            localStorage.setItem(key, JSON.stringify(existing));
+          }catch(err){ console.error('Storage error', err); }
+
+          form.reset();
+          status.style.color='green';
+          show('Thanks — your message was saved locally.');
+        });
+      })();
+    </script>
+  </body>
+</html>

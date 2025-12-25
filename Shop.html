@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shop Soap Products</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="shop.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/Images/Fera_symbol.jpg" alt="Logo" style="margin-left: 1px; width: 149px; height: auto;">
+    <style>
+    header img {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+  </style>
+    </header>
+
+    <div id="global-cart" class="global-cart" aria-live="polite">
+      <button id="global-cart-button">🛒 <span id="global-cart-count" class="count">0</span></button>
+      <div id="global-cart-dropdown" class="cart-dropdown" hidden>
+        <ul id="global-cart-items"></ul>
+        <div class="cart-actions"><a href="cart.html" class="btn">View cart</a></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav>
+        <a href="Index.html">Home</a>
+        <a href="Our Philosophy.html">Our Philosophy</a>
+        <a href="Shop.html">Shop Soap Products</a>
+        <a href="about us"> About Us</a>
+        <a href="contact us"> Contact Us</a>
+      </nav>
+
+      <main class="content">
+        <h1>Shop Soap Products</h1>
+        <p>Welcome — browse our soaps below.</p>
+
+        <section class="products">
+          <article class="product">
+            <h2>Lavender</h2>
+            <img src="/Images/Lavender_bar.png" alt="Lavender Soap" />
+            <p>Cold pressed lavender soap.</p>
+            <div class="meta">
+              <span class="price"><span style="text-decoration:line-through;color:#888;">$12.99</span> <span style="color:#b48c28;font-weight:700;">$8.99</span></span>
+                  <div class="actions">
+                    <div class="qty">
+                      <button class="dec" aria-label="Decrease">−</button>
+                      <input type="number" min="1" value="1" class="qty-input" />
+                      <button class="inc" aria-label="Increase">+</button>
+                    </div>
+                    <a href="lavender-page.html" class="btn">View</a>
+                    <a href="#" class="btn add-to-cart" data-id="lavender-001" data-name="Lavender Soap" data-price="8.99">Add to cart</a>
+                  </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <h2>Sandalwood</h2>
+            <img src="/Images/sandalwood.png" alt="Sandalwood Soap" />
+            <p>Cold pressed sandalwood soap.</p>
+            <div class="meta">
+              <span class="price">$12.99</span>
+              <div class="actions">
+                <div class="qty">
+                  <button class="dec" aria-label="Decrease">−</button>
+                  <input type="number" min="1" value="1" class="qty-input" />
+                  <button class="inc" aria-label="Increase">+</button>
+                </div>
+                <a href="sandalwood-page.html" class="btn">View</a>
+                <a href="#" class="btn add-to-cart" data-id="sandalwood-001" data-name="Sandalwood Soap" data-price="12.99">Add to cart</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <h2>Cedarwood</h2>
+            <img src="/Images/cedarwood.png" alt="Cedarwood Soap" />
+            <p>Cold pressed cedarwood soap.</p>
+            <div class="meta">
+              <span class="price">$12.99</span>
+              <div class="actions">
+                <div class="qty">
+                  <button class="dec" aria-label="Decrease">−</button>
+                  <input type="number" min="1" value="1" class="qty-input" />
+                  <button class="inc" aria-label="Increase">+</button>
+                </div>
+                <a href="cedarwood-page.html" class="btn">View</a>
+                <a href="#" class="btn add-to-cart" data-id="cedarwood-001" data-name="Cedarwood Soap" data-price="12.99">Add to cart</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <h2>Peppermint</h2>
+            <img src="/Images/peppermint.png" alt="Peppermint Soap" />
+            <p>Cold pressed peppermint soap.</p>
+            <div class="meta">
+              <span class="price">$12.99</span>
+              <div class="actions">
+                <div class="qty">
+                  <button class="dec" aria-label="Decrease">−</button>
+                  <input type="number" min="1" value="1" class="qty-input" />
+                  <button class="inc" aria-label="Increase">+</button>
+                </div>
+                <a href="peppermint-page.html" class="btn">View</a>
+                <a href="#" class="btn add-to-cart" data-id="peppermint-001" data-name="Peppermint Soap" data-price="12.99">Add to cart</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <p>© 2025 FERA — Nature's Design</p>
+        </div>
+        <div class="footer-right">
+          <span class="follow">Follow us</span>
+          <a class="social" href="https://www.instagram.com/feraforged/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5h.01" stroke="#2b2b2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3V2z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016.5 3c-2.5 0-4.5 2.28-3.97 4.73A12.94 12.94 0 013 4s-4 9 5 13a13 13 0 01-8 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="#2b2b2b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  <script src="cart.js"></script>
+  </body>
+</html>
